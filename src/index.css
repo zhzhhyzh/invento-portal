@@ -154,3 +154,60 @@ code {
   }
 }
 
+/* Container */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Buttons */
+.pagination-button {
+  background-color: #1e1e2f; /* dark theme like sidebar */
+  color: #cfd8dc;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* Hover state */
+.pagination-button:hover:not(:disabled) {
+  background-color: #4fc3f7; /* accent color */
+  color: #1e1e2f;
+  transform: translateY(-2px);
+}
+
+/* Active page */
+.pagination-button.active {
+  background-color: #4fc3f7;
+  color: #1e1e2f;
+  font-weight: 600;
+}
+
+/* Disabled state */
+.pagination-button:disabled {
+  background-color: #2c2c3f;
+  color: #777;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Add subtle shadow */
+.pagination-button {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .pagination-button {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.85rem;
+  }
+}
