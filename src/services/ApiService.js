@@ -113,7 +113,7 @@ export default class ApiService {
 
     static isAdmin() {
         const role = this.getRole();
-        return role == "ADMIN";
+        return role === "ADMIN";
     }
 
     /**PRODUCT ENDPOINT */

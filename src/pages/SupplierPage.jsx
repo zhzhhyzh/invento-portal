@@ -13,13 +13,13 @@ const SupplierPage = () => {
         const getSuppliers = async () => {
             try {
                 const data = await ApiService.getAllSuppliers();
-                if (data.status == 200) {
+                if (data.status === 200) {
                     setSuppliers(data.suppliers)
                 } else {
                     showMessage(data.message);
                 }
             } catch (e) {
-                console.error("Login error:", e);
+                console.error("Fetch error:", e);
 
                 // Handle network or server errors
                 const backendMsg =

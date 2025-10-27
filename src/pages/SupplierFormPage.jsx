@@ -20,7 +20,7 @@ const SupplierFormPage = () => {
             const fetchSupplier = async () => {
                 try {
                     const supplierData = await ApiService.getSupplierById(supplierId);
-                    if (supplierData.status == 200) {
+                    if (supplierData.status === 200) {
                         setName(supplierData.supplier.name);
                         setContactInfo(supplierData.supplier.contactInfo);
                         setAddress(supplierData.supplier.address);

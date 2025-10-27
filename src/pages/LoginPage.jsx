@@ -28,7 +28,7 @@ const LoginPage = () => {
                 return;
             }
 
-            if (response.status == 200) {
+            if (response.status === 200) {
                 ApiService.saveToken(response.token)
                 ApiService.saveRole(response.role)
                 setMessage(response.message)
