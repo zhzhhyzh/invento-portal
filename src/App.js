@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import CategoryPage from "./pages/CategoryPage";
 import SupplierPage from "./pages/SupplierPage";
 import SupplierFormPage from "./pages/SupplierFormPage";
+import ProductPage from "./pages/ProductPage";
 function App() {
   return (
     <Router>
@@ -18,6 +19,8 @@ function App() {
         <Route path="/supplier" element={<AdminRoute element={<SupplierPage />} />} />
         <Route path="/add-supplier" element={<AdminRoute element={<SupplierFormPage />} />} />
         <Route path="/edit-supplier/:supplierId" element={<AdminRoute element={<SupplierFormPage />} />} />
+        <Route path="/product" element={<AdminRoute element={<ProductPage />} />} />
+
 
       </Routes>
     </Router>

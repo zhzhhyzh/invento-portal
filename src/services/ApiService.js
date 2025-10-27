@@ -166,6 +166,17 @@ export default class ApiService {
         return response.data;
     }
 
+    static async getImage(fileName) {
+        if (!fileName) return "https://via.placeholder.com/200";
+
+        const response = await axios.get(`${this.BASE_URL}/images/${encodeURIComponent(fileName)}`, {
+            headers: this.getHeader(),
+            responseType: "blob" // important for images
+        });
+
+        return URL.createObjectURL(response.data); // Convert blob to usable URL
+    }
+
     /**CATEGORY ENDPOINTS **/
     static async addCategory(formData) {
         const response = await axios.post(`${this.BASE_URL}/categories/add`, formData, {
