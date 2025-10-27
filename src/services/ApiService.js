@@ -128,7 +128,7 @@ export default class ApiService {
     }
 
     static async updateProduct(formData) {
-        const response = await axios.put(`${this.BASE_URL}/products/update`, formData, {
+        const response = await axios.post(`${this.BASE_URL}/products/update`, formData, {
             headers: {
                 ...this.getHeader(),
                 "Content-Type": "multipart/form-data"

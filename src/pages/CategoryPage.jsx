@@ -15,11 +15,11 @@ const CategoryPage = () => {
         const getCategories = async () => {
             try {
                 const data = await ApiService.getAllCategories();
-                if (data.status == 200) {
+                if (data.status === 200) {
                     setCategories(data.categories)
                 }
             } catch (e) {
-                console.error("Login error:", e);
+                console.error("Fetch error:", e);
 
                 // Handle network or server errors
                 const backendMsg =
@@ -47,7 +47,7 @@ const CategoryPage = () => {
             setCategoryName("")//Clear input
             window.location.reload(); //reload page
         } catch (e) {
-            console.error("Login error:", e);
+            console.error("Adding error:", e);
 
             // Handle network or server errors
             const backendMsg =
@@ -69,7 +69,7 @@ const CategoryPage = () => {
             setCategoryName("")//Clear input
             window.location.reload(); //reload page
         } catch (e) {
-            console.error("Login error:", e);
+            console.error("Update error:", e);
 
             // Handle network or server errors
             const backendMsg =
