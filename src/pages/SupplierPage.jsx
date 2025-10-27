@@ -48,7 +48,7 @@ const SupplierPage = () => {
                 showMessage("Supplier successfully removed");
                 window.location.reload(); //reload page
             } catch (e) {
-                console.error("Login error:", e);
+                console.error("Delete error:", e);
 
                 // Handle network or server errors
                 const backendMsg =
@@ -74,52 +74,6 @@ const SupplierPage = () => {
 
 
     }
-
-    // //add supplier
-    // const addSupplier = async () => {
-    //     if (!supplierName) {
-    //         showMessage("Supplier name can't be empty")
-    //         return;
-    //     }
-
-    //     try {
-    //         await ApiService.addSupplier({ name: supplierName })
-    //         showMessage("Supplier successfully added");
-    //         setSupplierName("")//Clear input
-    //         window.location.reload(); //reload page
-    //     } catch (e) {
-    //         console.error("Login error:", e);
-
-    //         // Handle network or server errors
-    //         const backendMsg =
-    //             e.response?.data?.message ||
-    //             e.message ||
-    //             "Error Supplier Creation.";
-    //         showMessage(backendMsg);
-    //     }
-    // }
-
-    // //Edit supplier
-    // const editSupplier = async () => {
-
-
-    //     try {
-    //         await ApiService.updateSupplier(editingSupplierId, { name: supplierName });
-    //         showMessage("Supplier successfully edited");
-    //         setIsEditing(false);
-    //         setSupplierName("")//Clear input
-    //         window.location.reload(); //reload page
-    //     } catch (e) {
-    //         console.error("Login error:", e);
-
-    //         // Handle network or server errors
-    //         const backendMsg =
-    //             e.response?.data?.message ||
-    //             e.message ||
-    //             "Error Supplier Updates.";
-    //         showMessage(backendMsg);
-    //     }
-    // }
 
     return (
         <Layout>

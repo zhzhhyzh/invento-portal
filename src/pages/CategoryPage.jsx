@@ -92,10 +92,10 @@ const CategoryPage = () => {
         if (window.confirm("Are you sure you want to delete this category")) {
             try {
                 await ApiService.deleteCategory(categoryId);
-                showMessage("Category successfully removeds");
+                showMessage("Category successfully removed");
                 window.location.reload(); //reload page
             } catch (e) {
-                console.error("Login error:", e);
+                console.error("Delete error:", e);
 
                 // Handle network or server errors
                 const backendMsg =
