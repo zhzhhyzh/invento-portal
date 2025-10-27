@@ -29,3 +29,15 @@ To run this project locally:
 1. Clone the repository:
    ```bash
    git clone https://github.com/zhzhhyzh/invento-portal.git
+
+2. Navigate into the project directory:
+   ```bash
+   cd invento-portal
+
+3. Install dependencies:
+   ```bash
+   npm i --force
+
+4. Start the development server:
+   ```bash
+   npm run start
