@@ -106,3 +106,51 @@ code {
     padding: 0.6rem 0.8rem;
   }
 }
+
+/* Layout wrapper */
+.layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: #f5f7fa; /* subtle light background */
+  overflow: hidden;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  margin-left: 230px; /* same as sidebar width */
+  padding: 2rem;
+  overflow-y: auto;
+  height: 100vh;
+  box-sizing: border-box;
+  transition: margin-left 0.3s ease;
+}
+
+/* Add some card-like appearance to children if needed */
+.main-content > * {
+  margin-bottom: 1.5rem;
+}
+
+/* Scrollbar styling for main content */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
