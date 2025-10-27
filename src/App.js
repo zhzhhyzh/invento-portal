@@ -4,6 +4,7 @@ import { ProtectedRoute, AdminRoute } from "./services/Guard";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import CategoryPage from "./pages/CategoryPage";
+import SupplierPage from "./pages/SupplierPage";
 function App() {
   return (
     <Router>
@@ -13,6 +14,7 @@ function App() {
 
         {/*ADMIN ROUTES*/}
         <Route path="/category" element={<AdminRoute element={<CategoryPage />} />} />
+        <Route path="/supplier" element={<AdminRoute element={<SupplierPage />} />} />
 
       </Routes>
     </Router>

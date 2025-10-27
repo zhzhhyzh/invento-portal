@@ -579,3 +579,146 @@ code {
     justify-content: flex-end;
   }
 }
+/* --- SUPPLIER PAGE --- */
+.supplier-page {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 2rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+/* Header section */
+.supplier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.supplier-header h1 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Add supplier button */
+.add-sup button {
+  background-color: var(--accent);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add-sup button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+/* Supplier list */
+.supplier-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.supplier-item {
+  background-color: var(--sidebar-bg);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.supplier-item:hover {
+  background-color: rgba(79, 195, 247, 0.1);
+}
+
+.supplier-item span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Supplier action buttons */
+.supplier-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.supplier-actions button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* Edit button */
+.supplier-actions button:first-child {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+/* Delete button */
+.supplier-actions button:last-child {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.supplier-actions button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Message notification */
+.message {
+  text-align: center;
+  background-color: rgba(79, 195, 247, 0.15);
+  color: var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .supplier-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-sup {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .add-sup button {
+    width: 100%;
+  }
+
+  .supplier-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .supplier-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
