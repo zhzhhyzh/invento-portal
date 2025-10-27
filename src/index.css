@@ -722,3 +722,107 @@ code {
     justify-content: flex-end;
   }
 }
+
+/** --- SUPPLIER FORM PAGE --- */
+/* --- SUPPLIER FORM PAGE --- */
+.supplier-form-page {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 2rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Page heading */
+.supplier-form-page h1 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* Form groups */
+.supplier-form-page .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.supplier-form-page .form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.supplier-form-page .form-group input {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.supplier-form-page .form-group input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Submit button */
+.supplier-form-page button[type="submit"] {
+  background-color: var(--accent);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.supplier-form-page button[type="submit"]:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+/* Message notification */
+.supplier-form-page .message {
+  text-align: center;
+  background-color: rgba(79, 195, 247, 0.15);
+  color: var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .supplier-form-page {
+    padding: 1rem;
+  }
+
+  .supplier-form-page button[type="submit"] {
+    width: 100%;
+  }
+}
+
+/* Supplier Table Header */
+.supplier-table-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 1fr; /* Name | Contact Info | Address | Action */
+  gap: 1rem;
+  padding: 0.8rem 1.2rem;
+  font-weight: 600;
+  background-color: var(--sidebar-bg); /* Matches category page header style */
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.supplier-table-header span {
+  color: var(--accent); /* Highlight header text */
+}

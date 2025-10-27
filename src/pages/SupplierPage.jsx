@@ -142,9 +142,18 @@ const SupplierPage = () => {
 
                 {suppliers &&
                     <ul>
+                         <li className="supplier-table-header" >
+                                <span>Name</span>
+                                <span>Contact Info</span>
+                                <span>Address</span>
+                                <span>Action</span>
+                                
+                            </li>
                         {suppliers.map((supplier) => (
                             <li className="supplier-item" key={supplier.id}>
                                 <span>{supplier.name}</span>
+                                <span>{supplier.contactInfo}</span>
+                                <span>{supplier.address}</span>
                                 <div className="supplier-actions">
                                     <button onClick={() => navFormPage(supplier.id)}>Edit</button>
                                     <button onClick={() => deleteSupplier(supplier.id)}>Delete</button>
