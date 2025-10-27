@@ -3,11 +3,11 @@ import CryptoJS from "crypto-js";
 
 export default class ApiService {
     static BASE_URL = "http://localhost:5050/api";
-    static ENCRYPTION_KEY = "123456-123-123456789"
+    static ENCRYPTION_KEY = "abcdefghi1234567890abcdefghi1234567890"
 
     //encrypt data using crypto
     static encrypt(data) {
-        return CryptoJS.AES.encrypt(data, this.ENCRYPTION_KEY.toString());
+        return CryptoJS.AES.encrypt(data, this.ENCRYPTION_KEY).toString();
     }
 
     static decrypt(data) {
@@ -35,7 +35,7 @@ export default class ApiService {
     }
 
     //Retrieve Role with encryption
-    static getToken() {
+    static getRole() {
         const encryptedRole = localStorage.getItem("role");
         if (!encryptedRole) return null;
         return this.decrypt(encryptedRole);
@@ -98,6 +98,22 @@ export default class ApiService {
             headers: this.getHeader()
         })
         return response.data;
+    }
+
+
+    /**AUTHENTICATION CHECKER **/
+    static logout() {
+        this.clearAuth()
+    }
+
+    static isAuthenticated() {
+        const token = this.getToken();
+        return !!token;
+    }
+
+    static isAdmin() {
+        const role = this.getRole();
+        return role == "ADMIN";
     }
 
     /**PRODUCT ENDPOINT */
@@ -283,22 +299,6 @@ export default class ApiService {
             headers: this.getHeader()
         })
         return response.data;
-    }
-
-
-    /**AUTHENTICATION CHECKER **/
-    static logout() {
-        this.clearAuth()
-    }
-
-    static isAuthenticated() {
-        const token = this.getToken();
-        return !!token;
-    }
-
-    static isAdmin() {
-        const role = this.getRole();
-        return role === "ADMIN";
     }
 
 
