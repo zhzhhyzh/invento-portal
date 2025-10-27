@@ -11,3 +11,98 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 230px;
+  background: #1e1e2f; /* dark navy background */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* App title */
+.sidebar .ims {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #4fc3f7; /* accent color */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Navigation links list */
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Each list item */
+.nav-links li {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Link styles */
+.nav-links li a {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #cfd8dc;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links li a:hover {
+  background: #4fc3f7;
+  color: #1e1e2f;
+  font-weight: 600;
+  transform: translateX(5px);
+}
+
+/* Active/selected link (optional if using NavLink) */
+.nav-links li a.active {
+  background: #4fc3f7;
+  color: #1e1e2f;
+  font-weight: 600;
+}
+
+/* Logout link special color (optional) */
+.nav-links li:last-child a {
+  background: #f44336;
+  color: #fff;
+}
+
+.nav-links li:last-child a:hover {
+  background: #d32f2f;
+}
+
+/* Responsive (for smaller screens) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+    padding: 1.5rem 0.5rem;
+  }
+
+  .sidebar .ims {
+    font-size: 1.4rem;
+  }
+
+  .nav-links li a {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
