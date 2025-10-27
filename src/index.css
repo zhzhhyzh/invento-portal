@@ -1,3 +1,4 @@
+/* --- ORIGINAL ---*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,6 +13,8 @@ code {
     monospace;
 }
 
+/* --- SIDEBAR --- */
+
 /* Sidebar container */
 .sidebar {
   position: fixed;
@@ -19,7 +22,8 @@ code {
   left: 0;
   height: 100vh;
   width: 230px;
-  background: #1e1e2f; /* dark navy background */
+  background: #1e1e2f;
+  /* dark navy background */
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -34,7 +38,8 @@ code {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #4fc3f7; /* accent color */
+  color: #4fc3f7;
+  /* accent color */
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -107,19 +112,23 @@ code {
   }
 }
 
+/* --- LAYOUT ---*/
+
 /* Layout wrapper */
 .layout {
   display: flex;
   height: 100vh;
   width: 100%;
-  background: #f5f7fa; /* subtle light background */
+  background: #f5f7fa;
+  /* subtle light background */
   overflow: hidden;
 }
 
 /* Main content area */
 .main-content {
   flex: 1;
-  margin-left: 230px; /* same as sidebar width */
+  margin-left: 230px;
+  /* same as sidebar width */
   padding: 2rem;
   overflow-y: auto;
   height: 100vh;
@@ -128,7 +137,7 @@ code {
 }
 
 /* Add some card-like appearance to children if needed */
-.main-content > * {
+.main-content>* {
   margin-bottom: 1.5rem;
 }
 
@@ -154,6 +163,8 @@ code {
   }
 }
 
+/* --- PAGINATION ---*/
+
 /* Container */
 .pagination-container {
   display: flex;
@@ -166,7 +177,8 @@ code {
 
 /* Buttons */
 .pagination-button {
-  background-color: #1e1e2f; /* dark theme like sidebar */
+  background-color: #1e1e2f;
+  /* dark theme like sidebar */
   color: #cfd8dc;
   border: none;
   padding: 0.5rem 1rem;
@@ -179,7 +191,8 @@ code {
 
 /* Hover state */
 .pagination-button:hover:not(:disabled) {
-  background-color: #4fc3f7; /* accent color */
+  background-color: #4fc3f7;
+  /* accent color */
   color: #1e1e2f;
   transform: translateY(-2px);
 }
@@ -209,5 +222,110 @@ code {
   .pagination-button {
     padding: 0.4rem 0.7rem;
     font-size: 0.85rem;
+  }
+}
+
+/* --- REGISTER PAGE ---*/
+/* Auth container */
+.auth-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 6rem auto;
+  background-color: #1e1e2f; /* same as sidebar */
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #4fc3f7; /* accent color */
+}
+
+/* Message styling */
+.message {
+  background-color: rgba(79, 195, 247, 0.15);
+  color: #4fc3f7;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Form */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input fields */
+.auth-container input {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #2b2b3d;
+  color: #fff;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Input focus effect */
+.auth-container input:focus {
+  outline: none;
+  border-color: #4fc3f7;
+  background-color: #232334;
+}
+
+/* Submit button */
+.auth-container button {
+  background-color: #4fc3f7;
+  color: #1e1e2f;
+  font-weight: 600;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.auth-container button:hover {
+  background-color: #3ab0e5;
+  transform: translateY(-2px);
+}
+
+/* Login link */
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #cfd8dc;
+}
+
+.auth-container a {
+  color: #4fc3f7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 3rem 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-container h2 {
+    font-size: 1.5rem;
   }
 }

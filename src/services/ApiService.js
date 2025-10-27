@@ -297,7 +297,7 @@ export default class ApiService {
     }
 
     static isAdmin() {
-        const token = this.getRole();
+        const role = this.getRole();
         return role === "ADMIN";
     }
 
