@@ -1,3 +1,84 @@
+/* --- THEME MODES --- */
+
+/* Default (Dark Mode) */
+body[data-theme="dark"] {
+  --bg-color: #1e1e2f;
+  --text-color: #ffffff;
+  --sidebar-bg: #1e1e2f;
+  --main-bg: #2b2b3d;
+  --accent: #4fc3f7;
+  --danger: #f44336;
+  background-color: var(--main-bg);
+  color: var(--text-color);
+}
+
+/* Light Mode */
+body[data-theme="light"] {
+  --bg-color: #ffffff;
+  --text-color: #1e1e2f;
+  --sidebar-bg: #f4f4f4;
+  --main-bg: #f9f9f9;
+  --accent: #1976d2;
+  --danger: #e53935;
+  background-color: var(--main-bg);
+  color: var(--text-color);
+}
+
+/* Transition for smooth switching */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply theme variables globally */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+}
+
+.nav-links li a {
+  color: var(--text-color);
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+.nav-links li:last-child a {
+  background-color: var(--danger);
+}
+
+.main-content {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+/* --- THEME TOGGLE BUTTON --- */
+.theme-toggle-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--accent);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
 /* --- ORIGINAL ---*/
 body {
   margin: 0;
@@ -327,5 +408,174 @@ code {
 
   .auth-container h2 {
     font-size: 1.5rem;
+  }
+}
+
+/* --- CATEGORY PAGE --- */
+
+.category-page {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 2rem auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header section */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.category-header h1 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Add/Edit form */
+.add-cat {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.add-cat input {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.add-cat input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Add/Edit button */
+.add-cat button {
+  background-color: var(--accent);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add-cat button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+/* Category List */
+.category-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-item {
+  background-color: var(--sidebar-bg);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0.8rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.category-item:hover {
+  background-color: rgba(79, 195, 247, 0.1);
+}
+
+/* Category name text */
+.category-item span {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Edit/Delete buttons */
+.category-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.category-actions button {
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+/* Edit button */
+.category-actions button:first-child {
+  background-color: var(--accent);
+  color: var(--bg-color);
+}
+
+/* Delete button */
+.category-actions button:last-child {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.category-actions button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Message styling */
+.message {
+  text-align: center;
+  background-color: rgba(79, 195, 247, 0.15);
+  color: var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .category-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .add-cat {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .add-cat input,
+  .add-cat button {
+    width: 100%;
+  }
+
+  .category-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .category-actions {
+    width: 100%;
+    justify-content: flex-end;
   }
 }
