@@ -1344,3 +1344,175 @@ button[type="submit"]:hover {
     transform: translateY(0);
   }
 }
+
+/* --- TRANSACTION DETAILS PAGE --- */
+
+.transaction-details-page {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Section Card */
+.section-card {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-card h2 {
+  color: var(--accent);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
+}
+
+.section-card p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Product Image */
+.section-card img {
+  display: block;
+  margin-top: 1rem;
+  max-width: 200px;
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.section-card img:hover {
+  transform: scale(1.05);
+}
+
+/* Status Update Section */
+.transaction-status-update {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.transaction-status-update label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.transaction-status-update select {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.transaction-status-update select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.transaction-status-update button {
+  background-color: var(--accent);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.transaction-status-update button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+/* Message Box */
+.message {
+  text-align: center;
+  background-color: var(--accent);
+  color: var(--bg-color);
+  padding: 0.8rem;
+  border-radius: 6px;
+  margin: 1rem auto;
+  max-width: 90%;
+  font-weight: 500;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .transaction-details-page {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .transaction-status-update {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .transaction-status-update button {
+    width: 100%;
+  }
+}
+/* --- BACK BUTTON --- */
+.page-header {
+  display: flex;
+  justify-content: space-between; /* Places title left, button right */
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.back-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.back-button {
+  background-color: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.back-button:hover {
+  background-color: var(--accent);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}

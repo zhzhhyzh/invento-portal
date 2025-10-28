@@ -279,7 +279,7 @@ export default class ApiService {
     }
 
     static async updateTransaction(transactionId, status) {
-        const response = await axios.put(`${this.BASE_URL}/transactions/update/${transactionId}`, status, {
+        const response = await axios.put(`${this.BASE_URL}/transactions/${transactionId}`, status, {
             headers: this.getHeader(),
 
         })
@@ -306,7 +306,7 @@ export default class ApiService {
     }
 
     static async getTransactionById(transactionId) {
-        const response = await axios.get(`${this.BASE_URL}/suppliers/${transactionId}`, {
+        const response = await axios.get(`${this.BASE_URL}/transactions/${transactionId}`, {
             headers: this.getHeader()
         })
         return response.data;
