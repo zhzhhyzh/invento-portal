@@ -12,6 +12,7 @@ import PurchasePage from "./pages/PurchasePage";
 import SalePage from "./pages/SalePage";
 import TransactionPage from "./pages/TransactionPage";
 import TransactionDetailPage from "./pages/TransactionDetailPage";
+import ProfilePage from "./pages/ProfilePage";
 function App() {
   return (
     <Router>
@@ -33,6 +34,7 @@ function App() {
         <Route path="/sell" element={<ProtectedRoute element={<SalePage />} />} />
         <Route path="/transaction" element={<ProtectedRoute element={<TransactionPage />} />} />
         <Route path="/transaction/:transactionId" element={<ProtectedRoute element={<TransactionDetailPage />} />} />
+        <Route path="/profile" element={<ProtectedRoute element={<ProfilePage />} />} />
 
 
 
