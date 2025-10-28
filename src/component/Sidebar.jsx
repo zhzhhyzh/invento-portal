@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ApiService from "../services/ApiService";
 
 const logout = () => {
@@ -9,68 +9,40 @@ const logout = () => {
 
 const SideBar = () => {
     const isAuth = ApiService.isAuthenticated();
-
     const isAdmin = ApiService.isAdmin();
+
+    const location = useLocation(); // Get current path
+
+    const navItems = [
+        { path: "/dashboard", label: "Dashboard", auth: true },
+        { path: "/transaction", label: "Transactions", auth: true },
+        { path: "/category", label: "Category", auth: isAdmin },
+        { path: "/product", label: "Product", auth: isAdmin },
+        { path: "/supplier", label: "Supplier", auth: isAdmin },
+        { path: "/purchase", label: "Purchase", auth: true },
+        { path: "/sell", label: "Sell", auth: true },
+        { path: "/profile", label: "Profile", auth: true },
+        { path: "/login", label: "Logout", auth: true, onClick: logout }
+    ];
 
     return (
         <div className="sidebar">
             <h1 className="ims">Invento</h1>
             <ul className="nav-links">
-                {isAuth &&
-                    <li>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li>
-                }
-
-                {isAuth &&
-                    <li>
-                        <Link to="/transaction">Transactions</Link>
-                    </li>
-                }
-
-                {isAdmin &&
-                    <li>
-                        <Link to="/category">Category</Link>
-                    </li>
-                }
-
-                {isAdmin &&
-                    <li>
-                        <Link to="/product">Product</Link>
-                    </li>
-                }
-
-                {isAdmin &&
-                    <li>
-                        <Link to="/supplier">Supplier</Link>
-                    </li>
-                }
-
-                {isAuth &&
-                    <li>
-                        <Link to="/purchase">Purchase</Link>
-                    </li>
-                }
-
-                {isAuth &&
-                    <li>
-                        <Link to="/sell">Sell</Link>
-                    </li>
-                }
-
-                {isAuth &&
-                    <li>
-                        <Link to="/profile">Profile</Link>
-                    </li>
-                }
-
-                {isAuth &&
-                    <li>
-                        <Link onClick={logout} to="/login">Logout</Link>
-                    </li>
-                }
-
-
+                {navItems.map(
+                    (item) =>
+                        item.auth && (
+                            <li key={item.path}>
+                                <Link
+                                    to={item.path}
+                                    onClick={item.onClick}
+                                    className={location.pathname === item.path ? "active" : ""}
+                                >
+                                    {item.label}
+                                </Link>
+                            </li>
+                        )
+                )}
             </ul>
         </div>
     );
