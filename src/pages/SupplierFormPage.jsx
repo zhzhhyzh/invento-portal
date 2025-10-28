@@ -85,7 +85,16 @@ const SupplierFormPage = () => {
             {message && <div className="message">{message}</div>}
 
             <div className="supplier-form-page">
-                <h1>{isEditing ? "Edit Supplier" : "Add Supplier"}</h1>
+                <div className="page-header">
+                    <h1>{isEditing ? "Edit Supplier" : "Add Supplier"}</h1>
+
+                    <div className="back-button-container">
+                        <button className="back-button" onClick={() => navigate(-1)}>
+                            ← Back
+                        </button>
+                    </div>
+                </div>
+
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Supplier Name</label>

@@ -129,7 +129,16 @@ const ProductFormPage = () => {
             {message && <div className="message">{message}</div>}
 
             <div className="product-form-page">
+
+                      <div className="page-header">
                 <h1>{isEditing ? "Edit Product" : "Add Product"}</h1>
+
+  <div className="back-button-container">
+    <button className="back-button" onClick={() => navigate(-1)}>
+      ← Back
+    </button>
+  </div>
+</div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label>Product Name</label>
