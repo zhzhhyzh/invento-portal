@@ -32,8 +32,8 @@ const PurchasePage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!productId || !setProductId || !quantity) {
-            showMessage("PLase fill in all required fields")
+        if (!productId || !supplierId || !quantity) {
+            showMessage("Please fill in all required fields")
 
         }
         const body = {
