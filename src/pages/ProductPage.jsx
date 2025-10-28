@@ -54,7 +54,7 @@ const ProductPage = () => {
   const [message, setMessage] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const itemsPerPage = 2;
+  const itemsPerPage = 20;
 
   const navigate = useNavigate();
 
