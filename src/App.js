@@ -10,6 +10,7 @@ import ProductPage from "./pages/ProductPage";
 import ProductFormPage from "./pages/ProductFormPage";
 import PurchasePage from "./pages/PurchasePage";
 import SalePage from "./pages/SalePage";
+import TransactionPage from "./pages/TransactionPage";
 function App() {
   return (
     <Router>
@@ -29,6 +30,7 @@ function App() {
         {/*PROTECTED ROUTES (ADMIN AND MANAGER)*/}
         <Route path="/purchase" element={<ProtectedRoute element={<PurchasePage />} />} />
         <Route path="/sell" element={<ProtectedRoute element={<SalePage />} />} />
+        <Route path="/transaction" element={<ProtectedRoute element={<TransactionPage />} />} />
 
 
 

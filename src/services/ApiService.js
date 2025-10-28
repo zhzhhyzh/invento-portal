@@ -289,7 +289,7 @@ export default class ApiService {
     static async getAllTransactions(filter) {
         const response = await axios.get(`${this.BASE_URL}/transactions/all`, {
             headers: this.getHeader(),
-            params: { filter }
+            params: { searchValue: filter }
         })
         return response.data;
     }
