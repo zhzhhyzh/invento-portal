@@ -13,6 +13,7 @@ import SalePage from "./pages/SalePage";
 import TransactionPage from "./pages/TransactionPage";
 import TransactionDetailPage from "./pages/TransactionDetailPage";
 import ProfilePage from "./pages/ProfilePage";
+import DashboardPage from "./pages/DashboardPage";
 function App() {
   return (
     <Router>
@@ -35,7 +36,8 @@ function App() {
         <Route path="/transaction" element={<ProtectedRoute element={<TransactionPage />} />} />
         <Route path="/transaction/:transactionId" element={<ProtectedRoute element={<TransactionDetailPage />} />} />
         <Route path="/profile" element={<ProtectedRoute element={<ProfilePage />} />} />
-
+        <Route path="/dashboard" element={<ProtectedRoute element={<DashboardPage />} />} />
+        <Route path="*" element={<ProtectedRoute element={<DashboardPage />} />} />
 
 
       </Routes>

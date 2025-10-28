@@ -1777,3 +1777,108 @@ button[type="submit"]:hover {
   }
 }
 
+.dashboard-page {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+.message {
+    background-color: rgba(244, 67, 54, 0.1); /* light red */
+    color: var(--danger);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--danger);
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.button-group button {
+    background-color: var(--accent);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.button-group button:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    background-color: var(--main-bg);
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filter-section label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.filter-section select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--accent);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.chart-section {
+    background-color: var(--main-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.recharts-cartesian-grid line {
+    stroke: rgba(255, 255, 255, 0.1); /* subtle in dark mode */
+}
+
+.recharts-xAxis text,
+.recharts-yAxis text {
+    fill: var(--text-color); /* text adapts to theme */
+}
+
+.recharts-tooltip-wrapper {
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
